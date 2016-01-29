@@ -40,7 +40,8 @@ public class CalendarFileDAO implements CalendarDAO
 				String sun = cal[8];
 				String dayNum = cal[9];
 				String dayName = cal[1];
-				calendars.add(new Calendar(monthNum, month, mon, tues, wed, thurs, fri, sat, sun, dayNum, dayName));
+				String event = "";
+				calendars.add(new Calendar(monthNum, month, mon, tues, wed, thurs, fri, sat, sun, dayNum, dayName, event));
 			}
 			buf.close();
 		} catch (Exception e)
@@ -173,6 +174,21 @@ public class CalendarFileDAO implements CalendarDAO
 			{
 				cal = calendar;
 				cal.setDayName("Sunday");
+				cal.setDayNum(day);
+				break;
+			}
+		}
+		return cal;
+	}
+	public Calendar getEvent(String month, String day)
+	{
+		Calendar cal = null;
+		for (Calendar calendar : calendars)
+		{
+			if (calendar.getMonthNum().equalsIgnoreCase(month))
+			{
+				cal = calendar;
+//				cal.setDayName("Sunday");
 				cal.setDayNum(day);
 				break;
 			}

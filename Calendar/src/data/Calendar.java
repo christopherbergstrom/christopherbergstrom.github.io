@@ -13,8 +13,9 @@ public class Calendar
 	private String sun;
 	private String dayNum;
 	private String dayName;
+	private String event;
 	
-	Calendar(String monthNum, String month, String mon, String tues, String wed, String thurs, String fri, String sat, String sun, String dayNum, String dayName)
+	Calendar(String monthNum, String month, String mon, String tues, String wed, String thurs, String fri, String sat, String sun, String dayNum, String dayName, String event)
 	{
 		this.monthNum = monthNum;
 		this.month = month;
@@ -27,6 +28,7 @@ public class Calendar
 		this.sun = sun;
 		this.dayNum = dayNum;
 		this.dayName = dayName;
+		this.event = event;
 	}
 	
 	public String getMonthNum()
@@ -117,8 +119,16 @@ public class Calendar
 	{
 		this.dayName = dayName;
 	}
+	public String getEvent()
+	{
+		return event;
+	}
+	public void setEvent(String event)
+	{
+		this.event = event;
+	}
 	public String toString()
 	{
-		return monthNum + month + mon + tues + wed + thurs + fri + sat + sun + dayNum + dayName;
+		return monthNum + month + mon + tues + wed + thurs + fri + sat + sun + dayNum + dayName + event;
 	}
 }
