@@ -15,6 +15,8 @@ public class CalendarFileDAO implements CalendarDAO
 {
 	private static final String FILE_NAME = "WEB-INF/calendar.csv";
 	private List<Calendar> calendars = new ArrayList<>();
+	private List<String> eventName = new ArrayList<>();
+	private List<String> eventTime = new ArrayList<>();
 	
 	@Autowired
 	private ApplicationContext ac;
@@ -40,8 +42,9 @@ public class CalendarFileDAO implements CalendarDAO
 				String sun = cal[8];
 				String dayNum = cal[9];
 				String dayName = cal[1];
-				String event = "";
-				calendars.add(new Calendar(monthNum, month, mon, tues, wed, thurs, fri, sat, sun, dayNum, dayName, event));
+//				eventName.add("");
+//				eventTime.add("");
+				calendars.add(new Calendar(monthNum, month, mon, tues, wed, thurs, fri, sat, sun, dayNum, dayName, eventName, eventTime));
 			}
 			buf.close();
 		} catch (Exception e)
@@ -75,7 +78,7 @@ public class CalendarFileDAO implements CalendarDAO
 		}
 		return cal;
 	}
-	public Calendar getMon(String month, String day)
+	public Calendar getMon(String month, String day, String eventName, String eventTime)
 	{
 		Calendar cal = null;
 		for (Calendar calendar : calendars)
@@ -85,12 +88,14 @@ public class CalendarFileDAO implements CalendarDAO
 				cal = calendar;
 				cal.setDayName("Monday");
 				cal.setDayNum(day);
+				cal.setEventName(eventName);
+				cal.setEventTime(eventTime);
 				break;
 			}
 		}
 		return cal;
 	}
-	public Calendar getTues(String month, String day)
+	public Calendar getTues(String month, String day, String eventName, String eventTime)
 	{
 		Calendar cal = null;
 		for (Calendar calendar : calendars)
@@ -100,12 +105,14 @@ public class CalendarFileDAO implements CalendarDAO
 				cal = calendar;
 				cal.setDayName("Tuesday");
 				cal.setDayNum(day);
+				cal.setEventName(eventName);
+				cal.setEventTime(eventTime);
 				break;
 			}
 		}
 		return cal;
 	}
-	public Calendar getWed(String month, String day)
+	public Calendar getWed(String month, String day, String eventName, String eventTime)
 	{
 		Calendar cal = null;
 		for (Calendar calendar : calendars)
@@ -115,12 +122,14 @@ public class CalendarFileDAO implements CalendarDAO
 				cal = calendar;
 				cal.setDayName("Wednesday");
 				cal.setDayNum(day);
+				cal.setEventName(eventName);
+				cal.setEventTime(eventTime);
 				break;
 			}
 		}
 		return cal;
 	}
-	public Calendar getThurs(String month, String day)
+	public Calendar getThurs(String month, String day, String eventName, String eventTime)
 	{
 		Calendar cal = null;
 		for (Calendar calendar : calendars)
@@ -130,12 +139,14 @@ public class CalendarFileDAO implements CalendarDAO
 				cal = calendar;
 				cal.setDayName("Thursday");
 				cal.setDayNum(day);
+				cal.setEventName(eventName);
+				cal.setEventTime(eventTime);
 				break;
 			}
 		}
 		return cal;
 	}
-	public Calendar getFri(String month, String day)
+	public Calendar getFri(String month, String day, String eventName, String eventTime)
 	{
 		Calendar cal = null;
 		for (Calendar calendar : calendars)
@@ -145,12 +156,14 @@ public class CalendarFileDAO implements CalendarDAO
 				cal = calendar;
 				cal.setDayName("Friday");
 				cal.setDayNum(day);
+				cal.setEventName(eventName);
+				cal.setEventTime(eventTime);
 				break;
 			}
 		}
 		return cal;
 	}
-	public Calendar getSat(String month, String day)
+	public Calendar getSat(String month, String day, String eventName, String eventTime)
 	{
 		Calendar cal = null;
 		for (Calendar calendar : calendars)
@@ -160,12 +173,14 @@ public class CalendarFileDAO implements CalendarDAO
 				cal = calendar;
 				cal.setDayName("Saturday");
 				cal.setDayNum(day);
+				cal.setEventName(eventName);
+				cal.setEventTime(eventTime);
 				break;
 			}
 		}
 		return cal;
 	}
-	public Calendar getSun(String month, String day)
+	public Calendar getSun(String month, String day, String eventName, String eventTime)
 	{
 		Calendar cal = null;
 		for (Calendar calendar : calendars)
@@ -175,21 +190,8 @@ public class CalendarFileDAO implements CalendarDAO
 				cal = calendar;
 				cal.setDayName("Sunday");
 				cal.setDayNum(day);
-				break;
-			}
-		}
-		return cal;
-	}
-	public Calendar getEvent(String month, String day)
-	{
-		Calendar cal = null;
-		for (Calendar calendar : calendars)
-		{
-			if (calendar.getMonthNum().equalsIgnoreCase(month))
-			{
-				cal = calendar;
-//				cal.setDayName("Sunday");
-				cal.setDayNum(day);
+				cal.setEventName(eventName);
+				cal.setEventTime(eventTime);
 				break;
 			}
 		}

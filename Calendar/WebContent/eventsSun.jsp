@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,10 +8,25 @@
 </head>
 <body>
 	<h3>${calendar.dayName}, ${calendar.month} ${calendar.dayNum}</h3>
-	<p>Events</p>
+	<h4>Events</h4>
 	<p>events.jsp</p>
+	<%-- <p>${calendar.eventTime} ${calendar.eventName}</p> --%>
+	<table id = "eventNames">
+		<c:forEach var="eventName" items="${calendar.eventName}">
+			<tr>
+				<td>${eventName}</td>
+			</tr>
+		</c:forEach>
+	</table>
+	<table id = "eventTimes">
+		<c:forEach var="eventTime" items="${calendar.eventTime}">
+			<tr>
+				<td>${eventTime}</td>
+			</tr>
+		</c:forEach>
+	</table>
 	<form action = "createEvent.do" method = "POST">
-		<input type = "text" name = "name" placeholder = "Name of Event"/>
+		<input type = "text" name = "event" placeholder = "Name of Event"/>
 		<select name = "time">
 			<option value = "12:00 AM">12:00 AM</option>
 			<option value = "1:00 AM">1:00 AM</option>

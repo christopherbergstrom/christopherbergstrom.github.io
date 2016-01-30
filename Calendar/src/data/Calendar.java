@@ -1,5 +1,7 @@
 package data;
 
+import java.util.List;
+
 public class Calendar
 {
 	private String monthNum;
@@ -13,9 +15,10 @@ public class Calendar
 	private String sun;
 	private String dayNum;
 	private String dayName;
-	private String event;
+	private List<String> eventName;
+	private List<String> eventTime;
 	
-	Calendar(String monthNum, String month, String mon, String tues, String wed, String thurs, String fri, String sat, String sun, String dayNum, String dayName, String event)
+	Calendar(String monthNum, String month, String mon, String tues, String wed, String thurs, String fri, String sat, String sun, String dayNum, String dayName, List<String> eventName, List<String> eventTime)
 	{
 		this.monthNum = monthNum;
 		this.month = month;
@@ -28,7 +31,8 @@ public class Calendar
 		this.sun = sun;
 		this.dayNum = dayNum;
 		this.dayName = dayName;
-		this.event = event;
+		this.eventName = eventName;
+		this.eventTime = eventTime;
 	}
 	
 	public String getMonthNum()
@@ -119,16 +123,24 @@ public class Calendar
 	{
 		this.dayName = dayName;
 	}
-	public String getEvent()
+	public List<String> getEventName()
 	{
-		return event;
+		return eventName;
 	}
-	public void setEvent(String event)
+	public void setEventName(String eventName)
 	{
-		this.event = event;
+		this.eventName.add(eventName);
+	}
+	public List<String> getEventTime()
+	{
+		return eventTime;
+	}
+	public void setEventTime(String eventTime)
+	{
+		this.eventTime.add(eventTime);
 	}
 	public String toString()
 	{
-		return monthNum + month + mon + tues + wed + thurs + fri + sat + sun + dayNum + dayName + event;
+		return monthNum + month + mon + tues + wed + thurs + fri + sat + sun + dayNum + dayName + eventName + eventTime;
 	}
 }

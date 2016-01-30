@@ -39,7 +39,7 @@ public class CalendarController
 		dayNumberF = dayNumber;
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsMon.jsp");
-		mv.addObject("calendar", calendarDAO.getMon(monthNumberF, dayNumberF));
+		mv.addObject("calendar", calendarDAO.getMon(monthNumberF, dayNumberF, "", ""));
 		return mv;
 	}
 	@RequestMapping(path = "addEvent.do", params = "tuesday")
@@ -48,7 +48,7 @@ public class CalendarController
 		dayNumberF = dayNumber;
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsTues.jsp");
-		mv.addObject("calendar", calendarDAO.getTues(monthNumberF, dayNumberF));
+		mv.addObject("calendar", calendarDAO.getTues(monthNumberF, dayNumberF, "", ""));
 		return mv;
 	}
 	@RequestMapping(path = "addEvent.do", params = "wednesday")
@@ -57,7 +57,7 @@ public class CalendarController
 		dayNumberF = dayNumber;
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsWed.jsp");
-		mv.addObject("calendar", calendarDAO.getWed(monthNumberF, dayNumberF));
+		mv.addObject("calendar", calendarDAO.getWed(monthNumberF, dayNumberF, "", ""));
 		return mv;
 	}
 	@RequestMapping(path = "addEvent.do", params = "thursday")
@@ -66,7 +66,7 @@ public class CalendarController
 		dayNumberF = dayNumber;
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsThurs.jsp");
-		mv.addObject("calendar", calendarDAO.getThurs(monthNumberF, dayNumberF));
+		mv.addObject("calendar", calendarDAO.getThurs(monthNumberF, dayNumberF, "", ""));
 		return mv;
 	}
 	@RequestMapping(path = "addEvent.do", params = "friday")
@@ -75,7 +75,7 @@ public class CalendarController
 		dayNumberF = dayNumber;
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsFri.jsp");
-		mv.addObject("calendar", calendarDAO.getFri(monthNumberF, dayNumberF));
+		mv.addObject("calendar", calendarDAO.getFri(monthNumberF, dayNumberF, "", ""));
 		return mv;
 	}
 	@RequestMapping(path = "addEvent.do", params = "saturday")
@@ -84,7 +84,7 @@ public class CalendarController
 		dayNumberF = dayNumber;
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsSat.jsp");
-		mv.addObject("calendar", calendarDAO.getSat(monthNumberF, dayNumberF));
+		mv.addObject("calendar", calendarDAO.getSat(monthNumberF, dayNumberF, "", ""));
 		return mv;
 	}
 	@RequestMapping(path = "addEvent.do", params = "sunday")
@@ -93,71 +93,71 @@ public class CalendarController
 		dayNumberF = dayNumber;
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsSun.jsp");
-		mv.addObject("calendar", calendarDAO.getSun(monthNumberF, dayNumberF));
+		mv.addObject("calendar", calendarDAO.getSun(monthNumberF, dayNumberF, "", ""));
 		return mv;
 	}
-	@RequestMapping(path = "createEvent.do", params = {"name", "time", "monday"})
-	public ModelAndView createEventMon(@RequestParam("name") String eventName, @RequestParam("time") String eventTime, @RequestParam("monday") String dayName)
+	@RequestMapping(path = "createEvent.do", params = {"event", "time", "monday"})
+	public ModelAndView createEventMon(@RequestParam("event") String eventName, @RequestParam("time") String eventTime, @RequestParam("monday") String dayName)
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsMon.jsp");
-		mv.addObject("calendar", calendarDAO.getMon(monthNumberF, dayNumberF));
+		mv.addObject("calendar", calendarDAO.getMon(monthNumberF, dayNumberF, eventName, eventTime));
 		return mv;
 	}
-	@RequestMapping(path = "createEvent.do", params = {"name", "time", "tuesday"})
-	public ModelAndView createEventTues(@RequestParam("name") String eventName, @RequestParam("time") String eventTime, @RequestParam("tuesday") String dayName)
+	@RequestMapping(path = "createEvent.do", params = {"event", "time", "tuesday"})
+	public ModelAndView createEventTues(@RequestParam("event") String eventName, @RequestParam("time") String eventTime, @RequestParam("tuesday") String dayName)
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsTues.jsp");
-		mv.addObject("calendar", calendarDAO.getTues(monthNumberF, dayNumberF));
+		mv.addObject("calendar", calendarDAO.getTues(monthNumberF, dayNumberF, eventName, eventTime));
 		return mv;
 	}
-	@RequestMapping(path = "createEvent.do", params = {"name", "time", "wednesday"})
-	public ModelAndView createEventWed(@RequestParam("name") String eventName, @RequestParam("time") String eventTime, @RequestParam("wednesday") String dayName)
+	@RequestMapping(path = "createEvent.do", params = {"event", "time", "wednesday"})
+	public ModelAndView createEventWed(@RequestParam("event") String eventName, @RequestParam("time") String eventTime, @RequestParam("wednesday") String dayName)
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsWed.jsp");
-		mv.addObject("calendar", calendarDAO.getWed(monthNumberF, dayNumberF));
+		mv.addObject("calendar", calendarDAO.getWed(monthNumberF, dayNumberF, eventName, eventTime));
 		return mv;
 	}
-	@RequestMapping(path = "createEvent.do", params = {"name", "time", "thursday"})
-	public ModelAndView createEventThurs(@RequestParam("name") String eventName, @RequestParam("time") String eventTime, @RequestParam("thursday") String dayName)
+	@RequestMapping(path = "createEvent.do", params = {"event", "time", "thursday"})
+	public ModelAndView createEventThurs(@RequestParam("event") String eventName, @RequestParam("time") String eventTime, @RequestParam("thursday") String dayName)
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsThurs.jsp");
-		mv.addObject("calendar", calendarDAO.getThurs(monthNumberF, dayNumberF));
+		mv.addObject("calendar", calendarDAO.getThurs(monthNumberF, dayNumberF, eventName, eventTime));
 		return mv;
 	}
-	@RequestMapping(path = "createEvent.do", params = {"name", "time", "friday"})
-	public ModelAndView createEventFri(@RequestParam("name") String eventName, @RequestParam("time") String eventTime, @RequestParam("friday") String dayName)
+	@RequestMapping(path = "createEvent.do", params = {"event", "time", "friday"})
+	public ModelAndView createEventFri(@RequestParam("event") String eventName, @RequestParam("time") String eventTime, @RequestParam("friday") String dayName)
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsFri.jsp");
-		mv.addObject("calendar", calendarDAO.getFri(monthNumberF, dayNumberF));
+		mv.addObject("calendar", calendarDAO.getFri(monthNumberF, dayNumberF, eventName, eventTime));
 		return mv;
 	}
-	@RequestMapping(path = "createEvent.do", params = {"name", "time", "saturday"})
-	public ModelAndView createEventSat(@RequestParam("name") String eventName, @RequestParam("time") String eventTime, @RequestParam("saturday") String dayName)
+	@RequestMapping(path = "createEvent.do", params = {"event", "time", "saturday"})
+	public ModelAndView createEventSat(@RequestParam("event") String eventName, @RequestParam("time") String eventTime, @RequestParam("saturday") String dayName)
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsSat.jsp");
-		mv.addObject("calendar", calendarDAO.getSat(monthNumberF, dayNumberF));
+		mv.addObject("calendar", calendarDAO.getSat(monthNumberF, dayNumberF, eventName, eventTime));
 		return mv;
 	}
-	@RequestMapping(path = "createEvent.do", params = {"name", "time", "sunday"})
-	public ModelAndView createEventSun(@RequestParam("name") String eventName, @RequestParam("time") String eventTime, @RequestParam("sunday") String dayName)
+	@RequestMapping(path = "createEvent.do", params = {"event", "time", "sunday"})
+	public ModelAndView createEventSun(@RequestParam("event") String eventName, @RequestParam("time") String eventTime, @RequestParam("sunday") String dayName)
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsSun.jsp");
-		mv.addObject("calendar", calendarDAO.getSun(monthNumberF, dayNumberF));
+		mv.addObject("calendar", calendarDAO.getSun(monthNumberF, dayNumberF, eventName, eventTime));
 		return mv;
 	}
-	@RequestMapping(path = "deleteEvent.do", params = "name")
-	public ModelAndView deleteEvent(@RequestParam("name") String eventName)
+	@RequestMapping(path = "deleteEvent.do", params = {"event", "time", "sunday"})
+	public ModelAndView deleteEvent(@RequestParam("name") String eventName, @RequestParam("time") String eventTime, @RequestParam("sunday") String dayName)
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("events.jsp");
-		mv.addObject("event", calendarDAO.getSun(monthNumberF, eventName));
+		mv.addObject("event", calendarDAO.getSun(monthNumberF, dayNumberF, eventName, eventTime));
 		return mv;
 	}
 }
