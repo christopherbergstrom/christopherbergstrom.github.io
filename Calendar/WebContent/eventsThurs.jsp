@@ -12,16 +12,9 @@
 	<p>events.jsp</p>
 	<%-- <p>${calendar.eventTime} ${calendar.eventName}</p> --%>
 	<table id = "eventNames">
-		<c:forEach var="eventName" items="${calendar.eventName}">
+		<c:forEach var="event" items="${calendar.event}">
 			<tr>
-				<td>${eventName}</td>
-			</tr>
-		</c:forEach>
-	</table>
-	<table id = "eventTimes">
-		<c:forEach var="eventTime" items="${calendar.eventTime}">
-			<tr>
-				<td>${eventTime}</td>
+				<td><form action = "deleteEvent.do" method = "POST"><input type = "submit" name = "monday" value = "${event}"/>${event}</form></td>
 			</tr>
 		</c:forEach>
 	</table>
@@ -54,9 +47,6 @@
 			<option value = "11:00 PM">11:00 PM</option>
 		</select>
 		<input type = "submit" name = "thursday" value = "Add Event"/>
-	</form>
-	<form action = "deleteEvent.do" method = "POST">
-		<input type = "submit" name = "thursday" value = "Delete Event"/>
 	</form>
 	<form action = "index.html">
 		<input type = "submit" name = "home" value = "Home"/>

@@ -15,10 +15,9 @@ public class Calendar
 	private String sun;
 	private String dayNum;
 	private String dayName;
-	private List<String> eventName;
-	private List<String> eventTime;
+	private List<String> event;
 	
-	Calendar(String monthNum, String month, String mon, String tues, String wed, String thurs, String fri, String sat, String sun, String dayNum, String dayName, List<String> eventName, List<String> eventTime)
+	Calendar(String monthNum, String month, String mon, String tues, String wed, String thurs, String fri, String sat, String sun, String dayNum, String dayName, List<String> event)
 	{
 		this.monthNum = monthNum;
 		this.month = month;
@@ -31,8 +30,7 @@ public class Calendar
 		this.sun = sun;
 		this.dayNum = dayNum;
 		this.dayName = dayName;
-		this.eventName = eventName;
-		this.eventTime = eventTime;
+		this.event = event;
 	}
 	
 	public String getMonthNum()
@@ -123,24 +121,26 @@ public class Calendar
 	{
 		this.dayName = dayName;
 	}
-	public List<String> getEventName()
+	public List<String> getEvent()
 	{
-		return eventName;
+		return event;
 	}
-	public void setEventName(String eventName)
+	public void setEvent(String eventTime, String eventName)
 	{
-		this.eventName.add(eventName);
+		this.event.add(eventTime + " - " + eventName);
 	}
-	public List<String> getEventTime()
+	public void deleteEvent(String event)
 	{
-		return eventTime;
-	}
-	public void setEventTime(String eventTime)
-	{
-		this.eventTime.add(eventTime);
+		for (int i = 0; i < this.event.size(); i++)
+		{
+			if (this.event.get(i).equals(event))
+			{
+				this.event.remove(i);
+			}
+		}
 	}
 	public String toString()
 	{
-		return monthNum + month + mon + tues + wed + thurs + fri + sat + sun + dayNum + dayName + eventName + eventTime;
+		return monthNum + month + mon + tues + wed + thurs + fri + sat + sun + dayNum + dayName + event;
 	}
 }
