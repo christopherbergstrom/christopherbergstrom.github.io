@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel = "stylesheet" type = "text/css" href = "normalize.css"/>
+<link rel = "stylesheet" type = "text/css" href = "calendar.css"/>
 <meta charset="UTF-8">
 <title>Search</title>
 </head>
 <body>
-       <form action = "date.do" method = "GET">
+		<div id = "index">
+       <form id = "one" action = "date.do" method = "GET">
              <input type = "text" name = "name" placeholder = "Search by Month Name"/>
-             <input type = "submit" value = "Submit"/>
+             <input class = "buttons" type = "submit" value = "Submit"/>
        </form>
-       <form action = "date.do" method = "GET">
+       <form id = "two" action = "date.do" method = "GET">
              <input type = "text" name = "number" placeholder = "Search by Month Number"/>
-             <input type = "submit" value = "Submit"/>
+             <input class = "buttons" type = "submit" value = "Submit"/>
        </form>
+		</div>
 </body>
 </html>

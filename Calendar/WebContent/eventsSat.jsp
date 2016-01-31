@@ -3,21 +3,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel = "stylesheet" type = "text/css" href = "normalize.css"/>
+<link rel = "stylesheet" type = "text/css" href = "calendar.css"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Events</title>
+<title>${calendar.dayName}, ${calendar.month} ${calendar.dayNum}</title>
 </head>
 <body>
-	<h3>${calendar.dayName}, ${calendar.month} ${calendar.dayNum}</h3>
-	<h4>Events</h4>
-	<p>events.jsp</p>
-	<%-- <p>${calendar.eventTime} ${calendar.eventName}</p> --%>
-	<table id = "eventNames">
+	<h3 id = "head">${calendar.dayName}, ${calendar.month} ${calendar.dayNum}</h3>
+	<table id = "eventTable">
 		<c:forEach var="event" items="${calendar.event}">
 			<tr>
-				<td><form action = "deleteEvent.do" method = "POST"><input type = "submit" name = "monday" value = "${event}"/>${event}</form></td>
+				<td>
+					<form action = "deleteEvent.do" method = "POST">
+						<input class = "buttons" type = "submit" name = "saturday" value = "Delete Event"/>
+						<input type = "hidden" name = "hidden" value = "${event}"/>
+						${event}
+					</form>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>
+	<div id = "bottomForms">
 	<form action = "createEvent.do" method = "POST">
 		<input type = "text" name = "event" placeholder = "Name of Event"/>
 		<select name = "time">
@@ -46,10 +52,15 @@
 			<option value = "10:00 PM">10:00 PM</option>
 			<option value = "11:00 PM">11:00 PM</option>
 		</select>
-		<input type = "submit" name = "saturday" value = "Add Event"/>
+		<input class = "buttons" type = "submit" name = "monday" value = "Add Event"/>
 	</form>
-	<form action = "index.html">
-		<input type = "submit" name = "home" value = "Home"/>
+	<form id = "homeButton" action = "index.html">
+		<input class = "buttons" type = "submit" name = "home" value = "Home"/>
 	</form>
+	<form action = "date.do">
+		<input class = "buttons" type = "submit" name = "calendar" value = "Back to ${calendar.month}"/>
+		<input type = "hidden" name = "name" value = "${calendar.month}"/>
+	</form>
+	</div>
 </body>
 </html>

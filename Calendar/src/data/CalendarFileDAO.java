@@ -32,16 +32,9 @@ public class CalendarFileDAO implements CalendarDAO
 				String[] cal = line.split(",");
 				String monthNum = cal[0];
 				String month = cal[1];
-				String mon = cal[2];
-				String tues = cal[3];
-				String wed = cal[4];
-				String thurs = cal[5];
-				String fri = cal[6];
-				String sat = cal[7];
-				String sun = cal[8];
 				String dayNum = cal[9];
 				String dayName = cal[1];
-				calendars.add(new Calendar(monthNum, month, mon, tues, wed, thurs, fri, sat, sun, dayNum, dayName, event));
+				calendars.add(new Calendar(monthNum, month, dayNum, dayName, event));
 			}
 			buf.close();
 		} catch (Exception e)

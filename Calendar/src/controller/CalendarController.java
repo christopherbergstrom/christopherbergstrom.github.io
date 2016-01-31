@@ -160,56 +160,56 @@ public class CalendarController
 	}
 	
 	// Delete individual events
-	@RequestMapping(path = "deleteEvent.do", params = {"monday"})
-	public ModelAndView deleteEventMon(@RequestParam("monday") String event)
+	@RequestMapping(path = "deleteEvent.do", params = {"monday", "hidden"})
+	public ModelAndView deleteEventMon(@RequestParam("monday") String delete, @RequestParam("hidden") String event)
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsMon.jsp");
 		mv.addObject("calendar", calendarDAO.deleteMon(monthNumberF, dayNumberF, event));
 		return mv;
 	}
-	@RequestMapping(path = "deleteEvent.do", params = {"tuesday"})
-	public ModelAndView deleteEventTues(@RequestParam("tuesday") String event)
+	@RequestMapping(path = "deleteEvent.do", params = {"tuesday", "hidden"})
+	public ModelAndView deleteEventTues(@RequestParam("tuesday") String delete, @RequestParam("hidden") String event)
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsTues.jsp");
 		mv.addObject("calendar", calendarDAO.deleteTues(monthNumberF, dayNumberF, event));
 		return mv;
 	}
-	@RequestMapping(path = "deleteEvent.do", params = {"wednesday"})
-	public ModelAndView deleteEventWed(@RequestParam("wednesday") String event)
+	@RequestMapping(path = "deleteEvent.do", params = {"wednesday", "hidden"})
+	public ModelAndView deleteEventWed(@RequestParam("wednesday") String delete, @RequestParam("hidden") String event)
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsWed.jsp");
 		mv.addObject("calendar", calendarDAO.deleteWed(monthNumberF, dayNumberF, event));
 		return mv;
 	}
-	@RequestMapping(path = "deleteEvent.do", params = {"thursday"})
-	public ModelAndView deleteEventThurs(@RequestParam("thursday") String event)
+	@RequestMapping(path = "deleteEvent.do", params = {"thursday", "hidden"})
+	public ModelAndView deleteEventThurs(@RequestParam("thursday") String delete, @RequestParam("hidden") String event)
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsThurs.jsp");
 		mv.addObject("calendar", calendarDAO.deleteThurs(monthNumberF, dayNumberF, event));
 		return mv;
 	}
-	@RequestMapping(path = "deleteEvent.do", params = {"friday"})
-	public ModelAndView deleteEventFri(@RequestParam("friday") String event)
+	@RequestMapping(path = "deleteEvent.do", params = {"friday", "hidden"})
+	public ModelAndView deleteEventFri(@RequestParam("friday") String delete, @RequestParam("hidden") String event)
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsFri.jsp");
 		mv.addObject("calendar", calendarDAO.deleteFri(monthNumberF, dayNumberF, event));
 		return mv;
 	}
-	@RequestMapping(path = "deleteEvent.do", params = {"saturday"})
-	public ModelAndView deleteEventSat(@RequestParam("saturday") String event)
+	@RequestMapping(path = "deleteEvent.do", params = {"saturday", "hidden"})
+	public ModelAndView deleteEventSat(@RequestParam("saturday") String delete, @RequestParam("hidden") String event)
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsSat.jsp");
 		mv.addObject("calendar", calendarDAO.deleteSat(monthNumberF, dayNumberF, event));
 		return mv;
 	}
-	@RequestMapping(path = "deleteEvent.do", params = {"sunday"})
-	public ModelAndView deleteEventSun(@RequestParam("sunday") String event)
+	@RequestMapping(path = "deleteEvent.do", params = {"sunday", "hidden"})
+	public ModelAndView deleteEventSun(@RequestParam("sunday") String delete, @RequestParam("hidden") String event)
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("eventsSun.jsp");
