@@ -9,15 +9,15 @@
 <title>${calendar.dayName}, ${calendar.month} ${calendar.dayNum}</title>
 </head>
 <body>
-	<h3 id = "head">${calendar.dayName}, ${calendar.month} ${calendar.dayNum}</h3>
 	<table id = "eventTable">
+		<tr><th id = "head">${calendar.dayName}, ${calendar.month} ${calendar.dayNum}</th></tr>
 		<c:forEach var="event" items="${calendar.event}">
 			<tr>
 				<td>
 					<form action = "deleteEvent.do" method = "POST">
 						<input class = "buttons" type = "submit" name = "wednesday" value = "Delete Event"/>
 						<input type = "hidden" name = "hidden" value = "${event}"/>
-						${event}
+						<span id = "event">${event}</span>
 					</form>
 				</td>
 			</tr>
