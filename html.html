@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <base href="https://htmlbasicspart2.s3-us-west-1.amazonaws.com/index.html">
+        <title>HTML Basics - html</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    </head>
+    <body>
+        <!-- nav bar -->
+        <nav id="top" class="navBar">
+            <div class="left navItem">HTML Basics</div>
+            <a class="right navItem navItemLink" href="css.html">css</a>
+                <div class="right dropdown">
+                    <div class="dropdownBtn navItem navItemLink">html <i class="fa fa-caret-down"></i></div>
+                    <div class="dropdownContent">
+                        <a class="navItem navItemLink" href="html.html#paragraph">paragraph</a>
+                        <a class="navItem navItemLink" href="html.html#image">image</a>
+                        <a class="navItem navItemLink" href="html.html#link">link</a>
+                        <a class="navItem navItemLink" href="html.html#list">list</a>
+                        <a class="navItem navItemLink" href="html.html#heading">heading</a>
+                        <a class="navItem navItemLink" href="html.html#font">font</a>
+                        <a class="navItem navItemLink" href="html.html#iframe">iframe</a>
+                        <a class="navItem navItemLink" href="html.html#form">form</a>
+                        <a class="navItem navItemLink" href="html.html#input">input</a>
+                    </div>
+                </div>
+            <a class="right navItem navItemLink" href="index.html">home</a>
+        </nav>
+        <!-- paragraph -->
+        <section id="paragraph"class="container">
+            <div class="wrapper">
+                <h2 class="title">Paragraph</h2>
+                <p>
+                    The paragraph is the most used way to get text on the screen.
+                </p>
+                <p>
+                    <code>
+                        &lt;p&gt;this is a paragraph tag&lt;/p&gt;
+                    </code>
+                </p>
+            </div>
+        </section>
+        <!-- image -->
+        <section id="image" class="container">
+            <div class="wrapper">
+                <h2 class="title">Image</h2>
+                <p>
+                    Images are used to bring your website to life.
+                </p>
+                <p>
+                    <code>
+                        &lt;img src="www.examplesite.com/flower.jpg" alt="flowers"&gt;
+                    </code>
+                    <br>
+                    <br>
+                    <img src="images/flowers.jpg" alt="flowers">
+                </p>
+            </div>
+        </section>
+        <!-- link -->
+        <section id="link" class="container">
+            <div class="wrapper">
+                <h2 class="title">Link</h2>
+                <p>
+                    Links give your website the ability to easily go to other websites.
+                </p>
+                <p>
+                    <code>
+                        &lt;a href="https://google.com" target="_blank"&gt;Google&lt;/a&gt;
+                    </code>
+                    <br>
+                    <br>
+                    <a href="https://google.com" target="_blank">Google</a>
+                </p>
+            </div>
+        </section>
+        <!-- list -->
+        <section id="list" class="container">
+            <div class="wrapper">
+                <h2 class="title">List</h2>
+                <p>
+                    Lists are a useful way to list information. There are two types of lists, ordered and unordered.
+                </p>
+                <p>
+                    <code>
+                        <div>&lt;ol&gt;</div>
+                        <div class="tab">&lt;li&gt;Ordered item 1&lt;/li&gt;</div>
+                        <div class="tab">&lt;li&gt;Ordered item 2&lt;/li&gt;</div>
+                        <div class="tab">&lt;li&gt;Ordered item 3&lt;/li&gt;</div>
+                        <div>&lt;/ol&gt;</div>
+                        <br>
+                        <div>&lt;ul&gt;</div>
+                        <div class="tab">&lt;li&gt;Unordered item 1&lt;/li&gt;</div>
+                        <div class="tab">&lt;li&gt;Unordered item 2&lt;/li&gt;</div>
+                        <div class="tab">&lt;li&gt;Unordered item 3&lt;/li&gt;</div>
+                        <div>&lt;/ul&gt;</div>
+                    </code>
+                    <ol>
+                        <li>Ordered item 1</li>
+                        <li>Ordered item 2</li>
+                        <li>Ordered item 3</li>
+                    </ol>
+                    <ul>
+                        <li>Unordered item 1</li>
+                        <li>Unordered item 2</li>
+                        <li>Unordered item 3</li>
+                    </ul>
+                </p>
+            </div>
+        </section>
+        <!-- heading -->
+        <section id="heading" class="container">
+            <div class="wrapper">
+                <h2 class="title">Heading</h2>
+                <p>
+                    Headings are a way to emphasize the title (heading) of your content.
+                </p>
+                <p>
+                    <code>
+                        <div>&lt;h1&gt;h1&lt;/h1&gt;</div>
+                        <div>&lt;h2&gt;h2&lt;/h2&gt;</div>
+                        <div>&lt;h3&gt;h3&lt;/h3&gt;</div>
+                        <div>&lt;h4&gt;h4&lt;/h4&gt;</div>
+                        <div>&lt;h5&gt;h5&lt;/h5&gt;</div>
+                        <div>&lt;h6&gt;h6&lt;/h6&gt;</div>
+                    </code>
+                    <h1>h1</h1>
+                    <h2>h2</h2>
+                    <h3>h3</h3>
+                    <h4>h4</h4>
+                    <h5>h5</h5>
+                    <h6>h6</h6>
+                </p>
+            </div>
+        </section>
+        <!-- font -->
+        <section id="font" class="container">
+            <div class="wrapper">
+                <h2 class="title">Font</h2>
+                <p>
+                    The font of the text on your website can be styled many different ways. Some of these include wrapping certain text inside HTML tags and with CSS.
+                </p>
+                <p>
+                    <code>
+                        <div>&lt;em&gt;emphasis&lt;/em&gt;</div>
+                        <div>&lt;strong&gt;strong&lt;/strong&gt;</div>
+                    </code>
+                    <p><em>emphasis</em></p>
+                    <p><strong>strong</strong></p>
+                </p>
+            </div>
+        </section>
+        <!-- iframe -->
+        <section id="iframe" class="container">
+            <div class="wrapper">
+                <h2 class="title">Iframe</h2>
+                <p>
+                    Iframes are used to embed content from another website into yours. This could be be a whole other website in a little window, or something smaller like a youtube video.
+                </p>
+                <p>
+                    <code>
+                        <div>&lt;iframe src="https://responsivedesign.is/articles/xframe-options/" frameborder="0"&gt;&lt;/iframe&gt;</div>
+                    </code>
+                    <br>
+                    <br>
+                    <iframe src="https://responsivedesign.is/articles/xframe-options/" frameborder="0"></iframe>
+                </p>
+            </div>
+        </section>
+        <!-- form -->
+        <section id="form" class="container">
+            <div class="wrapper">
+                <h2 class="title">Form</h2>
+                <p>
+                    Forms are used to submit data. However, you can't do much with it unless you know server side code like php or node.js.
+                </p>
+                <p>
+                    <code>
+                        <div>&lt;form&gt;</div>
+                        <div class="tab">&lt;input type="text" placeholder="username"&gt;</div>
+                        <div class="tab">&lt;input type="password" placeholder="password"&gt;</div>
+                        <div class="tab">&lt;input type="submit"&gt;</div>
+                        <div>&lt;/form&gt;</div>
+                    </code>
+                    <p>
+                        <form action="#form">
+                            <input type="text" placeholder="username">
+                            <br>
+                            <input type="password" placeholder="password">
+                            <br>
+                            <input type="submit">
+                        </form>
+                    </p>
+                </p>
+            </div>
+        </section>
+        <!-- input -->
+        <section id="input" class="container">
+            <div class="wrapper">
+                <h2 class="title">Input</h2>
+                <p>
+                    Inputs are used to collect data. There are many types of input tags such as text, password, submit, radio, checkbox, color, and many more.
+                </p>
+                <p>
+                    <code>
+                            <div>&lt;input type="text" placeholder="username"&gt;</div>
+                            <div>&lt;input type="password" placeholder="password"&gt;</div>
+                            <div>&lt;input type="submit" value="submit"&gt;</div>
+                            <div>&lt;input type="radio" name="gender" value="male"&gt; Male</div>
+                            <div>&lt;input type="radio" name="gender" value="female"&gt; Female</div>
+                            <div>&lt;input type="radio" name="gender" value="other"&gt; Other</div>
+                            <div>&lt;input type="checkbox" name="fruit" value="banana"&gt; Banana</div>
+                            <div>&lt;input type="checkbox" name="fruit" value="apple"&gt; Apple</div>
+                            <div>&lt;input type="checkbox" name="fruit" value="orange"&gt; Orange</div>
+                            <div>&lt;input type="color"&gt;</div>
+                    </code>
+                    <p><input type="text" placeholder="username"></p>
+                    <p><input type="password" placeholder="password"></p>
+                    <p><input type="submit" value="submit"></p>
+                    <p><input type="radio" name="gender" value="male"> Male</p>
+                    <p><input type="radio" name="gender" value="female"> Female</p>
+                    <p><input type="radio" name="gender" value="other"> Other</p>
+                    <p><input type="checkbox" name="fruit" value="banana"> Banana</p>
+                    <p><input type="checkbox" name="fruit" value="apple"> Apple</p>
+                    <p><input type="checkbox" name="fruit" value="orange"> Orange</p>
+                    <p><input type="color"></p>
+                    <p>
+                        <select>
+                            <option value="">one</option>
+                            <option value="">two</option>
+                            <option value="">three</option>
+                            <option value="">three</option>
+                            <option value="">four</option>
+                        </select>
+                    </p>
+                </p>
+            </div>
+        </section>
+        <a class="topBtn navItem navItemLink" href="html.html#top"><i class="fa fa-angle-up"></i></a>
+    </body>
+</html>

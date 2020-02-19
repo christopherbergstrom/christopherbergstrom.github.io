@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <base href="https://htmlbasicspart2.s3-us-west-1.amazonaws.com/index.html">
+        <title>HTML Basics - css</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    </head>
+    <body>
+        <!-- nav bar -->
+        <nav id="top" class="navBar">
+            <div class="left navItem">HTML Basics</div>
+            <div class="right dropdown">
+                <div class="dropdownBtn navItem navItemLink">css <i class="fa fa-caret-down"></i></div>
+                <div class="dropdownContent">
+                    <a class="navItem navItemLink" href="css.html#selectors">selectors</a>
+                </div>
+            </div>
+            <a class="right navItem navItemLink" href="html.html">html</a>
+            <a class="right navItem navItemLink" href="index.html">home</a>
+        </nav>
+        <section id="selectors" class="container">
+            <div class="wrapper">
+                <h2 class="title">Selectors</h2>
+                <p>
+                    There are two types of selectors to help you target your html elements. The first is <code>id</code> which is specified with <code>"#"</code>, and then second is <code>class</code> which is specifies with <code>"."</code>.
+                </p>
+                <p>
+                    Another way to target html elements is to use the element name itself in your css code.
+                </p>
+                <p>
+                    <code>
+                        <div>#idName {color: red};</div>
+                        <div>.className {font-weight: bold};</div>
+                        <div>h1 {text-decoration: underline};</div>
+                    </code>
+                    <p style="color: red">red</p>
+                    <p style="font-weight: bold">bold</p>
+                    <h1 style="text-decoration: underline">underline</h1>
+                </p>
+            </div>
+        </section>
+        <a class="topBtn navItem navItemLink" href="css.html#top"><i class="fa fa-angle-up"></i></a>
+    </body>
+</html>
